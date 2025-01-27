@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_hub/Constants/constants.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 import 'Login Screen.dart';
@@ -14,10 +15,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
   String? email;
 
   String? passsword;
-
   bool isLoading = false;
+  bool _obscureText = true;
 
-var formK = GlobalKey<FormState>();
+
+  var formK = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +29,7 @@ var formK = GlobalKey<FormState>();
         body: Stack(
           children: [
             Positioned.fill(
-                child: Image.asset(
-                  'assets/images/bglogin.jpg',
+                child: Image.asset(KBackGImage,
                   fit: BoxFit.fill,)),
             SingleChildScrollView(
               scrollDirection: Axis.vertical,
@@ -131,6 +132,7 @@ var formK = GlobalKey<FormState>();
                         height: 5,
                       ),
                       TextFormField(
+                        obscureText: _obscureText,
                         onChanged: (data){
                           passsword= data;
                         },
@@ -142,7 +144,16 @@ var formK = GlobalKey<FormState>();
                         },
                         decoration: InputDecoration(
                           hintText: 'Password',
-                          suffixIcon: Icon(Icons.remove_red_eye_outlined),
+                          suffixIcon: IconButton(
+                            onPressed: (){
+                              setState(() {
+                                _obscureText = !_obscureText;
+                              });
+                            },
+                            icon: Icon(
+                              _obscureText ? Icons.visibility : Icons.visibility_off,
+                            ),
+                          ),
                           border: OutlineInputBorder(),
                           focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.orange)

@@ -1,6 +1,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_hub/Constants/constants.dart';
+import 'package:food_hub/Modules/Reset%20Password%20Screen.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 import 'SignUp Screen.dart';
@@ -14,10 +16,9 @@ class _LoginScreenState extends State<LoginScreen> {
   var formKey = GlobalKey<FormState>();
 
   String? email;
-
   String? passsword;
-
   bool isLoading = false;
+  bool _obscureText = true;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             Positioned.fill(
                 child: Image.asset(
-                  'assets/images/bglogin.jpg',
+                  KBackGImage,
                   fit: BoxFit.fill,)),
             SingleChildScrollView(
               scrollDirection: Axis.vertical,
@@ -107,6 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         height: 3,
                       ),
                       TextFormField(
+                        obscureText: _obscureText,
                         onChanged: (data){
                           passsword= data;
                         },
@@ -118,7 +120,16 @@ class _LoginScreenState extends State<LoginScreen> {
                         },
                         decoration: InputDecoration(
                           hintText: 'Password',
-                          suffixIcon: Icon(Icons.remove_red_eye_outlined),
+                          suffixIcon: IconButton(
+                            onPressed: (){
+                              setState(() {
+                                _obscureText = !_obscureText;
+                              });
+                            },
+                            icon: Icon(
+                              _obscureText ? Icons.visibility : Icons.visibility_off,
+                            ),
+                          ),
                           border: OutlineInputBorder(),
                           focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.orange)
@@ -133,7 +144,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       Center(
                         child: TextButton(
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => ResetPassScreen()));
+                            },
                             child: Text(
                               'Forgot password?',
                               style: TextStyle(

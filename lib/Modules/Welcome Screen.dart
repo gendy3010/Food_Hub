@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_hub/Modules/SignUp%20Screen.dart';
 
 import 'Login Screen.dart';
 
@@ -161,7 +162,9 @@ class WelcomeScreen extends StatelessWidget {
                   SizedBox(height: 25,),
                   Center(
                     child: OutlinedButton(
-                      onPressed: (){},
+                      onPressed: (){
+                        Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: (context)=> SignUpScreen()));                      },
                       child: Text('Start with email or phone',
                         style: TextStyle(
                           color: Colors.black,
