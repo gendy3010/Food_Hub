@@ -19,7 +19,6 @@ class VerificationScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 30,),
                 Container(
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -114,6 +113,7 @@ class CodeField extends StatelessWidget {
       height: 50,
       width: 50,
       decoration: BoxDecoration(
+
         border: Border.all(color: Colors.grey),
         borderRadius: BorderRadius.circular(10),
       ),
@@ -128,10 +128,16 @@ class CodeField extends StatelessWidget {
         keyboardType: TextInputType.number,
         maxLength: 1,
         decoration: InputDecoration(
+          focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.orange)
+          ),
+
           counterText: '',
           border: InputBorder.none,
         ),
-        style: Theme.of(context).textTheme.titleLarge,
+        style: TextStyle(
+          color: Colors.orange
+        ),
       ),
     );
   }

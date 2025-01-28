@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_hub/Modules/Home%20Screen.dart';
+import 'package:food_hub/Modules/test.dart';
 
 class SideMenu extends StatelessWidget {
   @override
@@ -18,7 +20,7 @@ class SideMenu extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 40,
-                backgroundImage: AssetImage('assets/profile_image.png'), // Add your image asset
+                backgroundImage: AssetImage('assets/images/profile.png'), // Add your image asset
               ),
               SizedBox(
                   height: 16),
@@ -38,7 +40,7 @@ class SideMenu extends StatelessWidget {
                   fontFamily: 'Sofia',
                   fontSize: 14,
                   color: Colors.grey,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w600,
 
                 ),
               ),
@@ -48,7 +50,7 @@ class SideMenu extends StatelessWidget {
               SizedBox(height: 20,),
 
               ListTile(
-          leading: Icon(Icons.shopping_bag),
+          leading: Image.asset('assets/images/icon.png'),
           title: Text(
             'My Orders',
             style: TextStyle(
@@ -60,7 +62,7 @@ class SideMenu extends StatelessWidget {
           },
         ),
         ListTile(
-          leading: Icon(Icons.person),
+          leading: Image.asset('assets/images/prof icon.png'),
           title: Text(
             'My Profile',
             style: TextStyle(
@@ -120,15 +122,16 @@ class SideMenu extends StatelessWidget {
           },
         ),
               Padding(
-                padding: const EdgeInsets.only(right: 160,top: 100,left: 10),
+                padding: const EdgeInsets.only(right: 165,top: 100,left: 10),
                 child: ElevatedButton.icon(
                   onPressed: (){},
                   icon: CircleAvatar(
-                    radius: 16,
+                    radius:17,
                     backgroundColor: Colors.white,
                     child: Icon(
                       Icons.power_settings_new,
                       color: Colors.deepOrange,
+                      size: 20,
                     ),
                   ),
                   label: Text('Log Out',
@@ -145,8 +148,8 @@ class SideMenu extends StatelessWidget {
 
                     backgroundColor:Colors.deepOrange ,
                     foregroundColor:Colors.red ,
-                    side:BorderSide(color: Colors.white) ,
-                    minimumSize: Size(100, 50),
+                    side:BorderSide(color: Colors.deepOrange) ,
+                    minimumSize: Size(10, 45),
                   ),
                 ),
               ),
@@ -154,9 +157,7 @@ class SideMenu extends StatelessWidget {
             ],
           ),
         ),
-      body: Center(
-        child: Text('Main Content'),
-      ),
+      body: HomeScreen(),
     );
   }
 }
