@@ -95,7 +95,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       SizedBox(
                         height: 10,
                       ),
-
                       Text('Password',
                         textAlign: TextAlign.left,
                         style: TextStyle(

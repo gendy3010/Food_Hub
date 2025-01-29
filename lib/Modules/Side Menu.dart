@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_hub/Modules/Home%20Screen.dart';
-import 'package:food_hub/Modules/test.dart';
+import 'package:food_hub/Widgets/FeaturedRestaurant%20ListView.dart';
 
 class SideMenu extends StatelessWidget {
   @override
