@@ -3,36 +3,41 @@ import 'package:flutter/material.dart';
 
 class CategoryButton extends StatelessWidget {
   final String label;
+  final bool isSelected;
+  final VoidCallback onTap;
 
-  CategoryButton({required this.label});
+  CategoryButton({required this.label, required this.isSelected, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        height: 95,
-        width: 60,
-        decoration: BoxDecoration(
-          color: Colors.orange,
-          borderRadius: BorderRadius.circular(25),
-        ),
-        child: Column(
-          children: [
-            SizedBox(height: 3),
-            Image.asset('assets/images/burger.png'),
-            SizedBox(height: 8),
-            Text(label,
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                color: Colors.white,
-                fontFamily: 'Sofia',
-                fontSize: 13,
-                fontWeight: FontWeight.w500,
+      padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          height: 90,
+          width: 60,
+          decoration: BoxDecoration(
+            color: isSelected ? Colors.orange : Colors.white,
+            borderRadius: BorderRadius.circular(25),
+          ),
+          child: Column(
+            children: [
+              SizedBox(height: 3),
+              Image.asset('assets/images/burger.png'),
+              SizedBox(height: 8),
+              Text(
+                label,
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  color: isSelected ? Colors.white : Colors.black,
+                  fontFamily: 'Sofia',
+                  fontSize: 13,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
-            ),
-
-          ],
+            ],
+          ),
         ),
       ),
     );

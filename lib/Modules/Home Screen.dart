@@ -137,7 +137,7 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     Container(
                       width: 260,
-                      height: 51,
+                      height: 45,
                       child: TextField(
                         decoration: InputDecoration(
                           hintText: 'Find for food or restaurant...',
@@ -148,10 +148,15 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      height: 60,
-                        width: 70,
-                        child: Image.asset('assets/images/filter.png'))
+                    GestureDetector(
+                      onTap: (){
+                        print('filter');
+                      },
+                      child: SizedBox(
+                        height: 70,
+                          width: 70,
+                          child: Image.asset('assets/images/filter.png')),
+                    )
                   ],
                 ),
                 FeaturedCategoryListView(),
