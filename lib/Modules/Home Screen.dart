@@ -166,6 +166,9 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(
+                height: 5),
+            CustomCard(),
 
           ],
         ),
@@ -175,3 +178,134 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
+class CustomCard extends StatelessWidget {
+  const CustomCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return  Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),),
+      elevation: 5,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Stack(
+            children: [
+              Image.asset(
+                  'assets/images/image 57.png', height: 100, width: double.infinity, fit: BoxFit.cover),
+              Padding(
+                padding: const EdgeInsets.only(top: 10,left: 10),
+                child: Row(
+                  children: [
+                    Align(
+                      alignment: Alignment.topRight,
+                      child: Container(
+                        height: 30,
+                        width: 60,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                             Text(
+                                  "4.5 ⭐",
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 9,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: "Sofia"),
+                                ),
+                            Text(
+                                  "(25+)",
+                                  style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 9,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: "Sofia"),
+                                ),
+
+                          ],
+                        ),
+                      ),
+                    ),
+                    Spacer(),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: Container(
+                        height: 30,
+                        width: 30,
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.circular(50)
+                        ),
+                        child: Icon(Icons.favorite,color: Colors.white,),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 10,),
+          Row(
+            children: [
+              Text('McDonald’s',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontFamily: 'Sofia',
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(width: 5,),
+              Icon(Icons.check_circle_rounded,color: Colors.grey[700],size: 14,)
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Icon(
+                Icons.delivery_dining_sharp,color: Colors.orange,),
+              SizedBox(
+                width: 8,),
+              Text('Free Delivery',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontFamily: 'Sofia',
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+              SizedBox(
+                width: 35,),
+              Icon(
+                Icons.timer,color: Colors.orange,size: 20,),
+              SizedBox(
+                width: 8,),
+              Text('10-15 mins',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontFamily: 'Sofia',
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+
+
+
+            ],
+          ),
+
+        ],
+      ),
+    );
+  }
+}
