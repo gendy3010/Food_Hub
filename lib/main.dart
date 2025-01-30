@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:food_hub/Modules/Food%20Details.dart';
+import 'package:food_hub/Modules/Side%20Menu.dart';
+import 'package:food_hub/Widgets/Ingredient%20Selection.dart';
 import 'Modules/Cart Screen.dart';
 
 
@@ -16,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: CartScreen(),
+      home: SideMenu(),
     );
   }
 }

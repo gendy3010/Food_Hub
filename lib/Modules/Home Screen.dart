@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_hub/Modules/Cart%20Screen.dart';
 import 'package:food_hub/Widgets/FeaturedRestaurant%20ListView.dart';
 import '../Widgets/Featured Category ListView.dart';
 
@@ -218,7 +219,13 @@ class HomeScreen extends StatelessWidget {
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_bag,color: Colors.grey,),
+            icon: GestureDetector(
+                onTap: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => CartScreen()));
+                },
+                child: Icon(Icons.shopping_bag,color: Colors.grey,)),
             label: '',
           ),
           BottomNavigationBarItem(
