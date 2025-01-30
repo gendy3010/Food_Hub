@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_hub/Modules/Reset%20Password%20Screen.dart';
-import 'package:food_hub/Modules/Side%20Menu.dart';
-import 'package:food_hub/Modules/Splash%20Screen.dart';
-import 'package:food_hub/Modules/Verification%20Code%20Screen.dart';
-
-import 'Modules/test.dart';
+import 'Modules/Cart Screen.dart';
 
 
 
@@ -20,8 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home:SideMenu(),
       debugShowCheckedModeBanner: false,
+      home: CartScreen(),
     );
   }
 }
