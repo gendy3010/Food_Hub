@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_hub/Constants/Styles.dart';
 import 'package:food_hub/Modules/Cart%20Screen.dart';
 import 'package:food_hub/Widgets/FeaturedRestaurant%20ListView.dart';
 import '../Widgets/Featured Category ListView.dart';
@@ -113,21 +114,11 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Text('What would you like',
                   textAlign: TextAlign.left,
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontFamily: 'Sofia',
-                    fontSize: 35,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: Style.textStyle30,
                 ),
                 Text('to order',
                   textAlign: TextAlign.left,
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontFamily: 'Sofia',
-                    fontSize: 35,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: Style.textStyle30,
                 ),
                 SizedBox(
                   height: 15,

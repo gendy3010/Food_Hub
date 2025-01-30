@@ -1,33 +1,12 @@
 import 'package:flutter/material.dart';
-
-import '../Widgets/Counter Button.dart';
+import 'package:food_hub/Constants/Styles.dart';
+import 'package:food_hub/Constants/Widgets/Divider.dart';
+import '../Constants/Widgets/Custom Button.dart';
+import '../Widgets/Order Item.dart';
 import 'Side Menu.dart';
 
-class CartScreen extends StatefulWidget {
+class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
-
-  @override
-  State<CartScreen> createState() => _CartScreenState();
-}
-
-class _CartScreenState extends State<CartScreen> {
-  int _counter = 2;
-  bool _isIncrementing = false;
-  void _increment() {
-    setState(() {
-      _counter++;
-      _isIncrementing = true;
-    });
-  }
-
-  void _decrement() {
-    if (_counter > 0) {
-      setState(() {
-        _counter--;
-        _isIncrementing = false;
-      });
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +18,9 @@ class _CartScreenState extends State<CartScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            SizedBox(height: 25,),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 30,horizontal: 10),
+              padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
               child: Row(
                 children: [
                   Material(
@@ -76,176 +56,23 @@ class _CartScreenState extends State<CartScreen> {
 
 
             ),
-            Row(
-              children: [
-                Center(
-                  child: Image.asset(
-                      'assets/images/cartitem.png'),
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('Red n Hot Pizza',
-                              textAlign: TextAlign.left,
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
-                                fontFamily: 'Sofia',
-                                fontSize: 22,
-                              ),
-                            ),
-                            Text('Spicy chicken,beef',
-                              textAlign: TextAlign.left,
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontFamily: 'Sofia',
-                                fontSize: 17,
-                              ),
-                            ),
+            OrderItem(),
+            OrderItem(),
 
-                          ],
-                        ),
-                        SizedBox(
-                          width: 50,
-                        ),
-                        IconButton(
-                            onPressed: (){},
-                            icon: Icon(Icons.close,color: Colors.orange,size: 22,)),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Text(r'$15.30',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.orange,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Sofia',
-                            fontSize: 17,
-                          ),
-                        ),
-                        SizedBox(width: 100,),
-                        buildButton(Icons.remove, _decrement, !_isIncrementing),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                          child: Text(
-                            _counter.toString().padLeft(2, '0'),
-                            style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                        buildButton(Icons.add, _increment, _isIncrementing),
-                      ],
-                    ),
-
-                  ],
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Center(
-                  child: Image.asset(
-                      'assets/images/cartitem.png'),
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('Greek Salad',
-                              textAlign: TextAlign.left,
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
-                                fontFamily: 'Sofia',
-                                fontSize: 22,
-                              ),
-                            ),
-                            Text('with baked salmon',
-                              textAlign: TextAlign.left,
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontFamily: 'Sofia',
-                                fontSize: 17,
-                              ),
-                            ),
-
-                          ],
-                        ),
-                        SizedBox(
-                          width: 50,
-                        ),
-                        IconButton(
-                            onPressed: (){},
-                            icon: Icon(Icons.close,color: Colors.orange,size: 22,)),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Text(r'$15.30',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.orange,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Sofia',
-                            fontSize: 17,
-                          ),
-                        ),
-                        SizedBox(width: 100,),
-                        buildButton(Icons.remove, _decrement, !_isIncrementing),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                          child: Text(
-                            _counter.toString().padLeft(2, '0'),
-                            style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                        buildButton(Icons.add, _increment, _isIncrementing),
-                      ],
-                    ),
-
-                  ],
-                ),
-              ],
-            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: TextFormField(
                 decoration: InputDecoration(
                   suffixIcon:Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ElevatedButton(
-                        onPressed: () async {},
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-                          backgroundColor: Colors.deepOrange,
-                          minimumSize: (Size(95, 40)),
-                        ),
-                        child: Text('Apply',
-                          style:TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'Sofia',
-                            fontSize: 16,
-                          ),
-                        )),
+                    padding: const EdgeInsets.only(right: 8,top: 3,bottom: 3),
+                    child:SizedBox(
+                      width: 100,
+                      height: 40,
+                      child: Custombutton(
+                        title: 'Apply',
+                      ),
+                    ),
+
                   ),
 
                   hintText: 'Promo Code',
@@ -269,28 +96,16 @@ class _CartScreenState extends State<CartScreen> {
                 children: [
                   Text('Subtotal',
                     textAlign: TextAlign.left,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: 'Sofia',
-                      fontSize: 20,
-                    ),
+                    style: Style.textStyle18.copyWith(fontWeight: FontWeight.w600),
                   ),
                   Spacer(),
                   Text(r'$27.30',
                     textAlign: TextAlign.left,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: 'Sofia',
-                      fontSize: 20,
-                    ),
+                    style: Style.textStyle20,
                   ),
                   Text(' USD',
                     textAlign: TextAlign.left,
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontFamily: 'Sofia',
-                      fontSize: 17,
-                    ),
+                    style: Style.textStyle14,
                   ),
 
 
@@ -299,42 +114,23 @@ class _CartScreenState extends State<CartScreen> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Divider(
-                color: Colors.grey,
-                thickness: 1,
-                height: 5,
-              ),
-            ),
+            CustomDivider(),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 25),
               child: Row(
                 children: [
                   Text('Tax and Fees',
                     textAlign: TextAlign.left,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: 'Sofia',
-                      fontSize: 20,
-                    ),
+                    style: Style.textStyle18.copyWith(fontWeight: FontWeight.w600),
                   ),
                   Spacer(),
                   Text(r'$5.30',
                     textAlign: TextAlign.left,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: 'Sofia',
-                      fontSize: 20,
-                    ),
+                    style: Style.textStyle20,
                   ),
                   Text(' USD',
                     textAlign: TextAlign.left,
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontFamily: 'Sofia',
-                      fontSize: 17,
-                    ),
+                    style: Style.textStyle14,
                   ),
 
 
@@ -343,42 +139,23 @@ class _CartScreenState extends State<CartScreen> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Divider(
-                color: Colors.grey,
-                thickness: 1,
-                height: 5,
-              ),
-            ),
+            CustomDivider(),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 25),
               child: Row(
                 children: [
                   Text('Delivery',
                     textAlign: TextAlign.left,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: 'Sofia',
-                      fontSize: 20,
-                    ),
+                    style: Style.textStyle18.copyWith(fontWeight: FontWeight.w600),
                   ),
                   Spacer(),
                   Text(r'$1.00',
                     textAlign: TextAlign.left,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: 'Sofia',
-                      fontSize: 20,
-                    ),
+                    style: Style.textStyle20,
                   ),
                   Text(' USD',
                     textAlign: TextAlign.left,
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontFamily: 'Sofia',
-                      fontSize: 17,
-                    ),
+                    style: Style.textStyle14,
                   ),
 
 
@@ -387,25 +164,14 @@ class _CartScreenState extends State<CartScreen> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Divider(
-                color: Colors.grey,
-                thickness: 1,
-                height: 5,
-              ),
-            ),
+            CustomDivider(),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 25),
               child: Row(
                 children: [
                   Text('Total',
                     textAlign: TextAlign.left,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: 'Sofia',
-                      fontSize: 20,
-                    ),
+                    style: Style.textStyle18.copyWith(fontWeight: FontWeight.w600),
                   ),
                   Text('  (2 items)',
                     textAlign: TextAlign.left,
@@ -418,19 +184,11 @@ class _CartScreenState extends State<CartScreen> {
                   Spacer(),
                   Text(r'$33.60',
                     textAlign: TextAlign.left,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: 'Sofia',
-                      fontSize: 20,
-                    ),
+                    style: Style.textStyle20,
                   ),
                   Text(' USD',
                     textAlign: TextAlign.left,
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontFamily: 'Sofia',
-                      fontSize: 17,
-                    ),
+                    style: Style.textStyle14,
                   ),
 
 
@@ -439,37 +197,12 @@ class _CartScreenState extends State<CartScreen> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Divider(
-                color: Colors.grey,
-                thickness: 1,
-                height: 5,
-              ),
-            ),
             SizedBox(
-              height: 25,
+              height: 20,
             ),
-            ElevatedButton(
-                onPressed: () async {
-                },
-                style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-
-                    backgroundColor: Colors.deepOrange,
-                    minimumSize:Size(230, 55)
-                ),
-                child: Text('CHECKOUT',
-                  style:TextStyle(
-                    color: Colors.white,
-                    fontFamily: 'Sofia',
-                    fontSize: 15,
-                  ),
-                )),
-            SizedBox(
-              height: 50,
+            Custombutton(
+              title: 'CHECKOUT',
             ),
-
           ],
         ),
       ),

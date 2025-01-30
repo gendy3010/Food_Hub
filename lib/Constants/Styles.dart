@@ -1,0 +1,39 @@
+
+import 'package:flutter/cupertino.dart';
+
+import 'Colors.dart';
+import 'constants.dart';
+
+abstract class Style {
+  static const textStyle14 = TextStyle(
+    color: ColorOfApp.grayColor,
+    fontSize: 14,
+    fontFamily: Sofia,
+    fontWeight: FontWeight.w600,
+  );
+  static const textStyle16 = TextStyle(
+    color: ColorOfApp.orangeColor,
+    fontSize: 16,
+    fontFamily: Sofia,
+    fontWeight: FontWeight.w600,
+  );
+
+  static const textStyle18 = TextStyle(
+    color: ColorOfApp.blackColor,
+    fontSize: 18,
+    fontFamily: Sofia,
+    fontWeight: FontWeight.bold,
+  );
+  static const textStyle20 = TextStyle(
+    color: ColorOfApp.blackColor,
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+  );
+  static const textStyle30 = TextStyle(
+    color: ColorOfApp.blackColor,
+    fontSize: 30,
+    fontFamily: Sofia,
+    fontWeight: FontWeight.w700,
+  );
+}
+
