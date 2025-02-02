@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_hub/Constants/constants.dart';
+import 'package:food_hub/Modules/Reset%20Password%20Screen.dart';
+
+import '../Constants/Styles.dart';
 
 class VerificationScreen extends StatelessWidget {
    VerificationScreen({super.key});
@@ -19,25 +22,30 @@ class VerificationScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
+                Material(
+                  borderRadius: BorderRadius.circular(20),
+                  elevation: 2,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: IconButton(onPressed: (){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => ResetPassScreen()));
+
+                    },
+                        icon: Icon(Icons.arrow_back_ios_new
+                          ,color: Colors.black,)),
                   ),
-                  child: IconButton(onPressed: (){},
-                      icon: Icon(Icons.arrow_back_ios_new)),
                 ),
                 SizedBox(
                   height: ScreenHeight * 0.15,
                 ),
                 Text('Verification Code',
                   textAlign: TextAlign.left,
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontFamily: 'Sofia',
-                    fontWeight: FontWeight.bold,
-                    fontSize: ScreenWidth* 0.10,
-                  ),
+                  style:Style.textStyle38,
                 ),
                 Text(
                   'Please type the verification code sent to prelookstudio@gmail.com',

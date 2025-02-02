@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:food_hub/Modules/Food%20Details.dart';
+import 'package:food_hub/Modules/Featured%20Food%20Details/Presentation/view/Food%20Details.dart';
 
 class CustomCard extends StatelessWidget {
   const CustomCard({super.key});

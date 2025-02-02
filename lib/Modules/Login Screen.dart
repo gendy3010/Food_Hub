@@ -3,8 +3,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_hub/Constants/constants.dart';
 import 'package:food_hub/Modules/Reset%20Password%20Screen.dart';
+import 'package:food_hub/Modules/Featured%20Home/Presentation/view/Side%20Menu.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
+import '../Constants/Widgets/Custom IconButton.dart';
+import '../Constants/Widgets/Custom TextFormField.dart';
 import 'SignUp Screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -73,24 +76,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       SizedBox(
                         height: 3,
                       ),
-                      TextFormField(
-                        onChanged: (data){
-                          email= data;
-                        },
-                        decoration: InputDecoration(
-                          hintText: 'Your email or phone',
-                          border: OutlineInputBorder(),
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.orange)
-                          ),
-
-                        ),
-                        validator: (value){
-                          if(value!.isEmpty){
-                            return'email must not be empty';
-                          }
-                          return null;
-                        },
+                      CustomTextFormField(
+                        hintText: 'Your email or phone',
+                        warninText: 'email must not be empty',
                       ),
                       SizedBox(
                         height: 10,
@@ -163,7 +151,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       Center(
                         child: ElevatedButton(
                             onPressed: () async {
-                              if(formKey.currentState!.validate()){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => SideMenu()));
+
+                              /* if(formKey.currentState!.validate()){
                                 isLoading= true;
                                 setState(() {
 
@@ -173,7 +165,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 setState(() {
 
                                 });
-                              }
+                              }*/
                             },
                             style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(28)),
@@ -263,43 +255,13 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              ElevatedButton.icon(
-                                onPressed: (){},
-                                icon: Image.asset('assets/images/facebook.png'),
-                                label: Text('facebook',
-                                  style: TextStyle(
-                                    fontFamily: 'Sofia',
-                                    color: Colors.black,
-                                    fontSize: 13,
-                                  ),),
-                                style: ElevatedButton.styleFrom(
-                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-                                  backgroundColor:Colors.white ,
-                                  foregroundColor:Colors.blue ,
-                                  side:BorderSide(color: Colors.white) ,
-                                  minimumSize: Size(80, 50),
-                                ),
-                              ),
+                              CustomIconButton(
+                                  title: 'facebook',
+                                  image: 'assets/images/facebook.png'),
                               Spacer(),
-                              ElevatedButton.icon(
-                                onPressed: (){},
-                                icon: Image.asset('assets/images/google.png'),
-                                label: Text('Google',
-                                  style: TextStyle(
-                                    fontFamily: 'Sofia',
-                                    color: Colors.black,
-                                    fontSize: 13,
-                                  ),
-                                ),
-                                style: ElevatedButton.styleFrom(
-                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-
-                                  backgroundColor:Colors.white ,
-                                  foregroundColor:Colors.red ,
-                                  side:BorderSide(color: Colors.white) ,
-                                  minimumSize: Size(80, 50),
-                                ),
-                              ),
+                              CustomIconButton(
+                                  title: 'Google',
+                                  image: 'assets/images/google.png'),
 
 
                             ],

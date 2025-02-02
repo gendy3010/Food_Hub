@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:food_hub/Constants/Styles.dart';
+import 'package:food_hub/Constants/Widgets/Custom%20IconButton.dart';
 import 'package:food_hub/Modules/SignUp%20Screen.dart';
+import 'package:food_hub/Regestiration%20Screen.dart';
 
 import 'Login Screen.dart';
 
@@ -47,42 +50,20 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                   Text('Welcome to',
                     textAlign: TextAlign.left,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: 'Sofia',
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: Style.textStyle45,
                   ),
                   Text('FoodHub',
                     textAlign: TextAlign.left,
-                    style: TextStyle(
-                      color: Colors.deepOrange,
-                      fontFamily: 'Sofia',
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: Style.textStyle45.copyWith(color: Colors.orange),
                   ),
                   SizedBox(
                     height: 20,
                   ),
                   Text('Your favourite foods delivered',
-                    style: TextStyle(
-                      fontFamily: 'Sofia',
-                      fontSize: 12,
-                      color: Colors.black54,
-                      fontWeight: FontWeight.bold,
-
-                    ),
+                    style: Style.textStyle14.copyWith(color: Colors.grey),
                   ),
                   Text('fast at your door.',
-                    style: TextStyle(
-                      fontFamily: 'Sofia',
-                      fontSize: 12,
-                      color: Colors.black54,
-                      fontWeight: FontWeight.bold,
-
-                    ),
+                    style: Style.textStyle14.copyWith(color: Colors.grey),
                   ),
                   SizedBox(
                     height: 150,),
@@ -115,46 +96,13 @@ class WelcomeScreen extends StatelessWidget {
                   SizedBox(height: 30,),
                   Row(
                     children: [
-                      ElevatedButton.icon(
-                        onPressed: (){},
-                        icon: Image.asset('assets/images/facebook.png'),
-                        label: Text('facebook',
-                          style: TextStyle(
-                            fontFamily: 'Sofia',
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 13,
-                          ),),
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-
-                          backgroundColor:Colors.white ,
-                          foregroundColor:Colors.blue ,
-                          side:BorderSide(color: Colors.blue) ,
-                          minimumSize: Size(70, 50),
-                        ),
-                      ),
+                      CustomIconButton(
+                          title: 'facebook',
+                          image: 'assets/images/facebook.png'),
                       Spacer(),
-                      ElevatedButton.icon(
-                        onPressed: (){},
-                        icon: Image.asset('assets/images/google.png'),
-                        label: Text('Google',
-                          style: TextStyle(
-                            fontFamily: 'Sofia',
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 13,
-                          ),
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-
-                          backgroundColor:Colors.white ,
-                          foregroundColor:Colors.red ,
-                          side:BorderSide(color: Colors.white) ,
-                          minimumSize: Size(60, 50),
-                        ),
-                      ),
+                      CustomIconButton(
+                          title: 'Google',
+                          image: 'assets/images/google.png'),
 
 
                     ],
@@ -164,7 +112,7 @@ class WelcomeScreen extends StatelessWidget {
                     child: OutlinedButton(
                       onPressed: (){
                         Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (context)=> SignUpScreen()));                      },
+                            MaterialPageRoute(builder: (context)=> RegistrationScreen()));                      },
                       child: Text('Start with email or phone',
                         style: TextStyle(
                           color: Colors.black,

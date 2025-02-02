@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:food_hub/Widgets/Ingredient%20Selection.dart';
+import 'package:food_hub/Modules/Featured%20Food%20Details/Presentation/widgets/Ingredient%20Selection.dart';
+import 'package:food_hub/Modules/Featured%20Home/Presentation/view/Side%20Menu.dart';
 
-import '../Widgets/Counter Button.dart';
+import '../../../../Constants/Widgets/Counter Button.dart';
 class FoodDetailsScreen extends StatefulWidget {
   const FoodDetailsScreen({super.key});
 
@@ -40,6 +41,24 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              Material(
+                borderRadius: BorderRadius.circular(20),
+                elevation: 2,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: IconButton(onPressed: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SideMenu()));
+
+                  },
+                      icon: Icon(Icons.arrow_back_ios_new
+                        ,color: Colors.black,)),
+                ),
+              ),
               Stack(
                 children: [
                   Padding(
@@ -62,7 +81,6 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                       children: [
                         GestureDetector(
                           onTap: (){
-                            Navigator.pop(context);
                           },
                           child: Material(
                             borderRadius: BorderRadius.circular(10),

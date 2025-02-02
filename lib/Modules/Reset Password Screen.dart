@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_hub/Constants/constants.dart';
+import 'package:food_hub/Modules/Login%20Screen.dart';
 import 'package:food_hub/Modules/Verification%20Code%20Screen.dart';
+import '../Constants/Styles.dart';
 
 class ResetPassScreen extends StatelessWidget {
   ResetPassScreen({super.key});
@@ -21,25 +23,31 @@ class ResetPassScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20),
+                  SizedBox(height: 15,),
+                  Material(
+                    borderRadius: BorderRadius.circular(20),
+                    elevation: 2,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: IconButton(onPressed: (){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => LoginScreen()));
+
+                      },
+                          icon: Icon(Icons.arrow_back_ios_new
+                            ,color: Colors.black,)),
                     ),
-                    child: IconButton(onPressed: (){},
-                        icon: Icon(Icons.arrow_back_ios_new)),
                   ),
                   SizedBox(
                     height: ScreenHeight * 0.15,
                   ),
                   Text('Reset Password',
                     textAlign: TextAlign.left,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: 'Sofia',
-                      fontWeight: FontWeight.bold,
-                      fontSize: ScreenWidth* 0.10,
-                    ),
+                    style:Style.textStyle38,
                   ),
                   SizedBox(
                     height: ScreenHeight * 0.02,
@@ -90,6 +98,7 @@ class ResetPassScreen extends StatelessWidget {
 
                         },
                         style: ElevatedButton.styleFrom(
+
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(28)),
 
                             backgroundColor: Colors.deepOrange,

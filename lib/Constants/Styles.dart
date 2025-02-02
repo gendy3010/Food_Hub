@@ -17,7 +17,6 @@ abstract class Style {
     fontFamily: Sofia,
     fontWeight: FontWeight.w600,
   );
-
   static const textStyle18 = TextStyle(
     color: ColorOfApp.blackColor,
     fontSize: 18,
@@ -35,5 +34,19 @@ abstract class Style {
     fontFamily: Sofia,
     fontWeight: FontWeight.w700,
   );
+  static const textStyle38 = TextStyle(
+    color: ColorOfApp.blackColor,
+    fontSize: 38,
+    fontFamily: Sofia,
+    fontWeight: FontWeight.bold,
+  );
+  static const textStyle45 = TextStyle(
+    color: ColorOfApp.blackColor,
+    fontSize: 45,
+    fontFamily: Sofia,
+    fontWeight: FontWeight.bold,
+  );
+
+
 }
 

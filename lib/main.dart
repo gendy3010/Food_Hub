@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_hub/Modules/Food%20Details.dart';
-import 'package:food_hub/Modules/Side%20Menu.dart';
-import 'package:food_hub/Widgets/Ingredient%20Selection.dart';
-import 'Modules/Cart Screen.dart';
+import 'package:food_hub/Modules/Featured%20Category/presentation/views/Category%20Screen.dart';
+import 'package:food_hub/Modules/Splash%20Screen.dart';
 
 
 
@@ -17,9 +15,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: SideMenu(),
+      home: SplashScreen(),
     );
   }
 }

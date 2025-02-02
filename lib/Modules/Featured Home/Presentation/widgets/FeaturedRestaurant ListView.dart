@@ -15,7 +15,7 @@ class FeaturedRestaurantListView extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: ListView.builder(
-          physics: const BouncingScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           scrollDirection: Axis.horizontal,
           itemBuilder: (context , index) {
             return Padding(
@@ -23,7 +23,7 @@ class FeaturedRestaurantListView extends StatelessWidget {
               child: CustomCard(),
             );
           },
-          itemCount: 7,
+          itemCount: 3,
         ),
       ),
     );

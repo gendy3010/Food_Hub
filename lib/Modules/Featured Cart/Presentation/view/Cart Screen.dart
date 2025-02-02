@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:food_hub/Constants/Styles.dart';
 import 'package:food_hub/Constants/Widgets/Divider.dart';
-import '../Constants/Widgets/Custom Button.dart';
-import '../Widgets/Order Item.dart';
-import 'Side Menu.dart';
+import '../../../../Constants/Widgets/Custom Button.dart';
+import '../widgets/Order Item.dart';
+import '../../../Featured Home/Presentation/view/Side Menu.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});

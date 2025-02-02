@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:food_hub/Constants/constants.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
+import '../Constants/Styles.dart';
+import '../Constants/Widgets/Custom IconButton.dart';
+import '../Constants/Widgets/Custom TextFormField.dart';
 import 'Login Screen.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -13,7 +16,6 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   String? email;
-
   String? passsword;
   bool isLoading = false;
   bool _obscureText = true;
@@ -42,12 +44,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     children: [
                       Text('Sign Up',
                         textAlign: TextAlign.left,
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.normal,
-                          fontFamily: 'Sofia',
-                          fontSize: 30,
-                        ),
+                        style:Style.textStyle38,
                       ),
                       SizedBox(
                         height: 50,
@@ -63,28 +60,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       SizedBox(
                         height: 5,
                       ),
-                      TextFormField(
-                        validator: (value){
-                          if(value!.isEmpty){
-                            return'name must not be empty';
-                          }
-                          return null;
-                        },
-                        decoration: InputDecoration(
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.orange)
-                          ),
-                          hintText: 'Your full name',
-                          border: OutlineInputBorder(
-                          ),
-                        ),
-
-
+                      CustomTextFormField(
+                       hintText: 'Your full name',
+                       warninText: 'name must not be empty',
                       ),
                       SizedBox(
                         height: 5,
                       ),
-
                       Text('E-mail',
                         textAlign: TextAlign.left,
                         style: TextStyle(
@@ -96,26 +78,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       SizedBox(
                         height: 5,
                       ),
-                      TextFormField(
-                        onChanged: (data){
-                          email= data;
-                        },
-                        validator: (value){
-                          if(value!.isEmpty){
-                            return'email must not be empty';
-                          }
-                          return null;
-                        },
-                        decoration: InputDecoration(
-                          hintText: 'Your email or phone',
-                          border: OutlineInputBorder(),
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.orange)
-                          ),
-
-                        ),
-
-
+                      CustomTextFormField(
+                        hintText: 'Your email or phone',
+                        warninText: 'email must not be empty',
                       ),
                       SizedBox(
                         height: 5,
@@ -265,44 +230,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                       Row(
                         children: [
-                          ElevatedButton.icon(
-                            onPressed: (){},
-                            icon: Image.asset('assets/images/facebook.png'),
-                            label: Text('facebook',
-                              style: TextStyle(
-                                fontFamily: 'Sofia',
-                                color: Colors.black,
-                                fontSize: 13,
-                              ),),
-                            style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-
-                              backgroundColor:Colors.white ,
-                              foregroundColor:Colors.blue ,
-                              side:BorderSide(color: Colors.white) ,
-                              minimumSize: Size(60, 50),
-                            ),
-                          ),
+                          CustomIconButton(
+                              title: 'facebook',
+                              image: 'assets/images/facebook.png'),
                           Spacer(),
-                          ElevatedButton.icon(
-                            onPressed: (){},
-                            icon: Image.asset('assets/images/google.png'),
-                            label: Text('Google',
-                              style: TextStyle(
-                                fontFamily: 'Sofia',
-                                color: Colors.black,
-                                fontSize: 13,
-                              ),
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-
-                              backgroundColor:Colors.white ,
-                              foregroundColor:Colors.red ,
-                              side:BorderSide(color: Colors.white) ,
-                              minimumSize: Size(60, 50),
-                            ),
-                          ),
+                          CustomIconButton(
+                              title: 'Google',
+                              image: 'assets/images/google.png'),
 
 
                         ],

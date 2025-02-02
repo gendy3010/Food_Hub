@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../Constants/Styles.dart';
-import 'Counter Button.dart';
+import '../../../../Constants/Styles.dart';
+import '../../../../Constants/Widgets/Counter Button.dart';
 
 class OrderItem extends StatefulWidget {
   const OrderItem({super.key});

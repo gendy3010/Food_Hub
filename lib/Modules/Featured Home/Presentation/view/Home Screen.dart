@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_hub/Constants/Styles.dart';
-import 'package:food_hub/Modules/Cart%20Screen.dart';
-import 'package:food_hub/Widgets/FeaturedRestaurant%20ListView.dart';
-import '../Widgets/Featured Category ListView.dart';
+import 'package:food_hub/Modules/Featured%20Cart/Presentation/view/Cart%20Screen.dart';
+import 'package:food_hub/Modules/Featured%20Home/Presentation/widgets/FeaturedRestaurant%20ListView.dart';
+import '../widgets/Featured Category ListView.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

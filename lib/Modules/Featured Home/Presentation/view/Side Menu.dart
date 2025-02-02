@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:food_hub/Modules/Home%20Screen.dart';
-import 'package:food_hub/Widgets/FeaturedRestaurant%20ListView.dart';
+import 'package:food_hub/Modules/Featured%20Home/Presentation/view/Home%20Screen.dart';
+import 'package:food_hub/Modules/Featured%20Home/Presentation/widgets/FeaturedRestaurant%20ListView.dart';
+
+import '../../../Featured My Orders/presentation/views/My Orders.dart';
 
 class SideMenu extends StatelessWidget {
   @override
@@ -58,7 +60,8 @@ class SideMenu extends StatelessWidget {
                 fontSize: mediaQuery.size.width * 0.045),
           ),
           onTap: () {
-            // Handle My Orders
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context)=> MyOrdersScreen()));
           },
         ),
         ListTile(

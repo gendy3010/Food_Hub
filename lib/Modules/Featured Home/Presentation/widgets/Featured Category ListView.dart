@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../Featured Category/presentation/views/Category Screen.dart';
 import 'custom category button.dart';
 
 class FeaturedCategoryListView extends StatefulWidget {
@@ -30,7 +31,11 @@ class _FeaturedCategoryListViewState extends State<FeaturedCategoryListView> {
               isSelected: selectedIndex == index,
               onTap: () {
                 setState(() {
-                  selectedIndex = index; // يغير المؤشر لما يتم الضغط على زر جديد
+                  selectedIndex = index;
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context)=> CategoryScreen()));
+
                 });
               },
             );
