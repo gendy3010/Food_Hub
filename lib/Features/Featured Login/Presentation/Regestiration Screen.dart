@@ -24,11 +24,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       builder: (context) => Theme(
         data: Theme.of(context).copyWith(primaryColor: Colors.pink),
         child: CountryPickerDialog(
-          titlePadding: EdgeInsets.all(8.0),
+          titlePadding: const EdgeInsets.all(8.0),
           searchCursorColor: Colors.pinkAccent,
-          searchInputDecoration: InputDecoration(hintText: 'Search...'),
+          searchInputDecoration: const InputDecoration(hintText: 'Search...'),
           isSearchable: true,
-          title: Text('Select your phone code'),
+          title: const Text('Select your phone code'),
           onValuePicked: (Country country) {
             setState(() {
               _selectedCountry = country;
@@ -52,9 +52,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     return Row(
       children: <Widget>[
         CountryPickerUtils.getDefaultFlagImage(country),
-        SizedBox(width: 8.0),
+        const SizedBox(width: 8.0),
         Text("+${country.phoneCode}"),
-        SizedBox(width: 8.0),
+        const SizedBox(width: 8.0),
         Flexible(child: Text(country.name)),
       ],
     );
@@ -74,7 +74,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Container(
@@ -85,22 +85,22 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   child: IconButton(onPressed: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context)=> WelcomeScreen()));
+                        MaterialPageRoute(builder: (context)=> const WelcomeScreen()));
 
                   },
-                      icon: Icon(Icons.arrow_back_ios_new)),
+                      icon: const Icon(Icons.arrow_back_ios_new)),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 80,
                 ),
-                Text('Registration',
+                const Text('Registration',
                   textAlign: TextAlign.left,
                   style:Style.textStyle38,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
-                Text(
+                const Text(
                   'Enter your phone number to verify your account',
                   textAlign: TextAlign.left,
                   style: TextStyle(
@@ -109,7 +109,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     fontSize: 14,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                     height: 30),
                 Row(
                   children: [
@@ -128,9 +128,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                 child: Row(
                                   children: [
                                     CountryPickerUtils.getDefaultFlagImage(_selectedCountry),
-                                    SizedBox(
+                                    const SizedBox(
                                         width: 8),
-                                    Icon(Icons.arrow_drop_down_sharp,color: Colors.grey,)
+                                    const Icon(Icons.arrow_drop_down_sharp,color: Colors.grey,)
 
                                   ],
                                 ),
@@ -143,14 +143,14 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           ),
                           focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(16),
-                              borderSide: BorderSide(color: Colors.orange)
+                              borderSide: const BorderSide(color: Colors.orange)
                           ),                        ),
                         keyboardType: TextInputType.phone,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
                 Center(child: Custombutton(title: 'SEND')),
               ],
             ),

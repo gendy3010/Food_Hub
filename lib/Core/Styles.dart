@@ -1,5 +1,6 @@
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import 'Colors.dart';
 import 'constants.dart';
@@ -29,6 +30,13 @@ abstract class Style {
     fontFamily: Sofia,
     fontWeight: FontWeight.bold,
   );
+  static const textStyle22 = TextStyle(
+    color: Colors.orange,
+    fontSize: 22,
+    fontFamily: Sofia,
+    fontWeight: FontWeight.normal,
+  );
+
   static const textStyle30 = TextStyle(
     color: ColorOfApp.blackColor,
     fontSize: 30,

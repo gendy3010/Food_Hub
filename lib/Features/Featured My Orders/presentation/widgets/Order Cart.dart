@@ -43,33 +43,33 @@ class _OrderCartState extends State<OrderCart> {
                             width: 60,
                             height: 60,
                             child: Image.asset('assets/images/OrderImage.png'))),
-                    SizedBox(
+                    const SizedBox(
                       width: 15,),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
 
                         Text(
                           '3 items',style: Style.textStyle14.copyWith(color: Colors.grey),),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         Row(
                           children: [
                             Text(
                               'Starbuck',style: Style.textStyle20.copyWith(color: Colors.black),),
-                            SizedBox(width: 3,),
-                            Icon(
+                            const SizedBox(width: 3,),
+                            const Icon(
                               Icons.check_circle_rounded,color: Color(0xFF029094),size: 12,)
                           ],
                         ),
 
                       ],
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
@@ -79,7 +79,7 @@ class _OrderCartState extends State<OrderCart> {
 
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -87,14 +87,14 @@ class _OrderCartState extends State<OrderCart> {
                   children: [
                     Text(
                       'Estimated Arrival',style: Style.textStyle14.copyWith(color: Colors.grey),),
-                    Spacer(),
+                    const Spacer(),
                     Text(
                       'Now',style: Style.textStyle14.copyWith(color: Colors.grey),),
 
 
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -102,7 +102,7 @@ class _OrderCartState extends State<OrderCart> {
                   children: [
                     Text(
                       '25',style: Style.textStyle30.copyWith(color: Colors.black),),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
                     Padding(
@@ -110,7 +110,7 @@ class _OrderCartState extends State<OrderCart> {
                       child: Text(
                         'min',style: Style.textStyle14.copyWith(color: Colors.black),),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Text(
                       'Food on the way',style: Style.textStyle16.copyWith(color: Colors.black,fontWeight: FontWeight.normal),),
 
@@ -118,7 +118,7 @@ class _OrderCartState extends State<OrderCart> {
 
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -132,7 +132,7 @@ class _OrderCartState extends State<OrderCart> {
                         });
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     OrderButton(

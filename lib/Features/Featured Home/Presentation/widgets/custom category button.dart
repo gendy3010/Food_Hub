@@ -29,9 +29,9 @@ class CategoryButton extends StatelessWidget {
             ),
             child: Column(
               children: [
-                SizedBox(height: 3),
+                const SizedBox(height: 3),
                 Image.asset('assets/images/burger.png'),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
                   label,
                   textAlign: TextAlign.left,

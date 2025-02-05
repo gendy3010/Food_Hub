@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'Features/Featured Favourites/Presentation/Views/Favourites Screen.dart';
 import 'Features/Featured Login/Presentation/Splash Screen.dart';
+import 'Features/Featured Rating&Reviews/Presentation/views/Review Resturant.dart';
 
 
 
@@ -14,9 +16,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: ReviewResturant(),
     );
   }
 }

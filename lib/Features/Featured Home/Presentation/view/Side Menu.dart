@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:food_hub/Features/Add%20New%20Adrees.dart';
 
 import '../../../Featured My Orders/presentation/views/My Orders.dart';
+import '../../../Featured Profile/presentation/views/My Profile.dart';
 import 'Home Screen.dart';
 
 class SideMenu extends StatelessWidget {
@@ -18,13 +20,21 @@ class SideMenu extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              CircleAvatar(
-                radius: 40,
-                backgroundImage: AssetImage('assets/images/profile.png'), // Add your image asset
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const MyProfile()));
+                },
+                child: const CircleAvatar(
+
+                  radius: 40,
+                  backgroundImage: AssetImage('assets/images/profile.png'), // Add your image asset
+                ),
               ),
-              SizedBox(
+              const SizedBox(
                   height: 16),
-              Text(
+              const Text(
                 'Furion Wick',
                 style: TextStyle(
                   fontFamily: 'Sofia',
@@ -34,7 +44,7 @@ class SideMenu extends StatelessWidget {
 
                 ),
               ),
-              Text(
+              const Text(
                 'forionwick@gmail.com',
                 style: TextStyle(
                   fontFamily: 'Sofia',
@@ -47,7 +57,7 @@ class SideMenu extends StatelessWidget {
             ],
           ),
         ),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
 
               ListTile(
           leading: Image.asset('assets/images/icon.png'),
@@ -59,35 +69,49 @@ class SideMenu extends StatelessWidget {
           ),
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context)=> MyOrdersScreen()));
+                MaterialPageRoute(builder: (context)=> const MyOrdersScreen()));
           },
         ),
         ListTile(
           leading: Image.asset('assets/images/prof icon.png'),
-          title: Text(
-            'My Profile',
-            style: TextStyle(
-                fontFamily: 'Sofia',
-                fontSize: mediaQuery.size.width * 0.045),
+          title: GestureDetector(
+            onTap: (){
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MyProfile()));
+            },
+            child: Text(
+              'My Profile',
+              style: TextStyle(
+                  fontFamily: 'Sofia',
+                  fontSize: mediaQuery.size.width * 0.045),
+            ),
           ),
           onTap: () {
             // Handle Delivery Address
           },
         ),
         ListTile(
-          leading: Icon(Icons.location_on),
-          title: Text(
-            'Delivery Address',
-            style: TextStyle(
-                fontFamily: 'Sofia',
-                fontSize: mediaQuery.size.width * 0.045),
+          leading: const Icon(Icons.location_on),
+          title: GestureDetector(
+            onTap: (){
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const AddNewAdress()));
+            },
+            child: Text(
+              'Delivery Address',
+              style: TextStyle(
+                  fontFamily: 'Sofia',
+                  fontSize: mediaQuery.size.width * 0.045),
+            ),
           ),
           onTap: () {
             // Handle Delivery Address
           },
         ),
         ListTile(
-          leading: Icon(Icons.email),
+          leading: const Icon(Icons.email),
           title: Text(
             'Contact Us',
             style: TextStyle(
@@ -99,7 +123,7 @@ class SideMenu extends StatelessWidget {
           },
         ),
         ListTile(
-          leading: Icon(Icons.settings),
+          leading: const Icon(Icons.settings),
           title: Text(
             'Settings',
             style: TextStyle(
@@ -111,7 +135,7 @@ class SideMenu extends StatelessWidget {
           },
         ),
         ListTile(
-          leading: Icon(Icons.help),
+          leading: const Icon(Icons.help),
           title: Text(
             'Help & FAQs',
             style: TextStyle(
@@ -126,7 +150,7 @@ class SideMenu extends StatelessWidget {
                 padding: const EdgeInsets.only(right: 165,top: 100,left: 10),
                 child: ElevatedButton.icon(
                   onPressed: (){},
-                  icon: CircleAvatar(
+                  icon: const CircleAvatar(
                     radius:17,
                     backgroundColor: Colors.white,
                     child: Icon(
@@ -135,7 +159,7 @@ class SideMenu extends StatelessWidget {
                       size: 20,
                     ),
                   ),
-                  label: Text('Log Out',
+                  label: const Text('Log Out',
                     style: TextStyle(
                       fontFamily: 'Sofia',
                       color: Colors.white,
@@ -149,8 +173,8 @@ class SideMenu extends StatelessWidget {
 
                     backgroundColor:Colors.deepOrange ,
                     foregroundColor:Colors.red ,
-                    side:BorderSide(color: Colors.deepOrange) ,
-                    minimumSize: Size(10, 45),
+                    side:const BorderSide(color: Colors.deepOrange) ,
+                    minimumSize: const Size(10, 45),
                   ),
                 ),
               ),
@@ -158,7 +182,7 @@ class SideMenu extends StatelessWidget {
             ],
           ),
         ),
-      body: HomeScreen(),
+      body: const HomeScreen(),
     );
   }
 }

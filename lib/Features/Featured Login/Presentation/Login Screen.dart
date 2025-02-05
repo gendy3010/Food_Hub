@@ -50,12 +50,12 @@ class _LoginScreenState extends State<LoginScreen> {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: IconButton(onPressed: (){},
-                            icon: Icon(Icons.arrow_back_ios_new)),
+                            icon: const Icon(Icons.arrow_back_ios_new)),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 60,
                       ),
-                      Text('Login',
+                      const Text('Login',
                         textAlign: TextAlign.left,
                         style: TextStyle(
                           color: Colors.black,
@@ -63,10 +63,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           fontSize: 30,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 60,
                       ),
-                      Text('E-mail',
+                      const Text('E-mail',
                         textAlign: TextAlign.left,
                         style: TextStyle(
                           color: Colors.grey,
@@ -74,17 +74,17 @@ class _LoginScreenState extends State<LoginScreen> {
                           fontSize: 14,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 3,
                       ),
                       CustomTextFormField(
                         hintText: 'Your email or phone',
                         warninText: 'email must not be empty',
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Text('Password',
+                      const Text('Password',
                         textAlign: TextAlign.left,
                         style: TextStyle(
                           color: Colors.grey,
@@ -92,7 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           fontSize: 14,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 3,
                       ),
                       TextFormField(
@@ -118,8 +118,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               _obscureText ? Icons.visibility : Icons.visibility_off,
                             ),
                           ),
-                          border: OutlineInputBorder(),
-                          focusedBorder: OutlineInputBorder(
+                          border: const OutlineInputBorder(),
+                          focusedBorder: const OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.orange)
                           ),
 
@@ -127,7 +127,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
 
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Center(
@@ -137,7 +137,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   context,
                                   MaterialPageRoute(builder: (context) => ResetPassScreen()));
                             },
-                            child: Text(
+                            child: const Text(
                               'Forgot password?',
                               style: TextStyle(
                                 color: Colors.red,
@@ -146,7 +146,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             )),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Center(
@@ -172,9 +172,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(28)),
 
                                 backgroundColor: Colors.deepOrange,
-                                minimumSize:Size(240, 55)
+                                minimumSize:const Size(240, 55)
                             ),
-                            child: Text('LOGIN',
+                            child: const Text('LOGIN',
                               style:TextStyle(
                                 color: Colors.white,
                                 fontFamily: 'Sofia',
@@ -182,13 +182,13 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             )),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('Don\'t have an account?',
+                          const Text('Don\'t have an account?',
                             style: TextStyle(
                               color: Colors.brown,
                               fontFamily: 'Sofia',
@@ -200,7 +200,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   MaterialPageRoute(builder: (context)=> SignUpScreen()));
 
                             },
-                            child:  Text('Sign Up',
+                            child:  const Text('Sign Up',
                               style: TextStyle(
                                 color: Colors.red,
                                 fontFamily: 'Sofia',
@@ -208,7 +208,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),),),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
@@ -223,17 +223,17 @@ class _LoginScreenState extends State<LoginScreen> {
                                   width: 88,
                                   color: Colors.grey,
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10,
                                 ),
-                                Text('Sign in with',
+                                const Text('Sign in with',
                                   style: TextStyle(
                                     fontSize: 12,
                                     fontFamily: 'Sofia',
                                     color: Colors.brown,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10,
                                 ),
                                 Container(
@@ -247,7 +247,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Center(
@@ -259,7 +259,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               CustomIconButton(
                                   title: 'facebook',
                                   image: 'assets/images/facebook.png'),
-                              Spacer(),
+                              const Spacer(),
                               CustomIconButton(
                                   title: 'Google',
                                   image: 'assets/images/google.png'),

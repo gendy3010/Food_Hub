@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../../../../Core/Styles.dart';
 import '../../../Featured Home/Presentation/view/Side Menu.dart';
-import '../widgets/2 Buttons.dart';
-import '../widgets/Lasted order card.dart';
-import '../widgets/LastedOrders ListView.dart';
-import '../widgets/Order Cart.dart';
+import '../Widgets/Fav ListView.dart';
+import '../Widgets/FavButtons.dart';
 
-class MyOrdersScreen extends StatelessWidget {
-  const MyOrdersScreen({super.key});
+
+class FavouritesScreen extends StatelessWidget {
+  const FavouritesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -70,23 +68,18 @@ class MyOrdersScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20),
-              child: Toggle2Buttons(),
-            ),
-            Center(
-                child: OrderCart()),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40,vertical: 20),
-              child: Text(
-                'Lasted Orders',style: Style.textStyle20.copyWith(color: Colors.black),),
-            ),
-            LastedOrdersListView(),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children:
+            [
+              FavButtons(),
+              SizedBox(height: 20,),
+              FavListView(),
+            ],
+          ),
         ),
       ),
     );

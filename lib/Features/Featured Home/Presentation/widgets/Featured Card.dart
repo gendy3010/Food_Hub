@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_hub/Features/Featured%20Rating&Reviews/Presentation/views/Review%20Resturant.dart';
 
 import '../../../Featured Food Details/Presentation/view/Food Details.dart';
+import '../../../Featured Rating&Reviews/Presentation/views/Reviews Screen.dart';
+
 
 class CustomCard extends StatelessWidget {
   const CustomCard({super.key});
@@ -11,7 +14,7 @@ class CustomCard extends StatelessWidget {
     return  GestureDetector(
       onTap: (){
         Navigator.push(context, 
-            MaterialPageRoute(builder: (context)=> FoodDetailsScreen()));
+            MaterialPageRoute(builder: (context)=> const FoodDetailsScreen()));
       },
       child: SizedBox(
         height: 229,
@@ -32,40 +35,47 @@ class CustomCard extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 10,left: 10),
                     child: Row(
                       children: [
-                        Align(
-                          alignment: Alignment.topRight,
-                          child: Container(
-                            height: 30,
-                            width: 60,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "4.5 ⭐",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 9,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: "Sofia"),
-                                ),
-                                Text(
-                                  "(25+)",
-                                  style: TextStyle(
-                                      color: Colors.grey,
-                                      fontSize: 9,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: "Sofia"),
-                                ),
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => ReviewResturant()));
+                          },
+                          child: Align(
+                            alignment: Alignment.topRight,
+                            child: Container(
+                              height: 30,
+                              width: 60,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: const Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "4.5 ⭐",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 9,
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: "Sofia"),
+                                  ),
+                                  Text(
+                                    "(25+)",
+                                    style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 9,
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: "Sofia"),
+                                  ),
 
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Padding(
                           padding: const EdgeInsets.only(right: 10),
                           child: Container(
@@ -75,7 +85,7 @@ class CustomCard extends StatelessWidget {
                                 color: Colors.red,
                                 borderRadius: BorderRadius.circular(50)
                             ),
-                            child: Icon(Icons.favorite,color: Colors.white,),
+                            child: const Icon(Icons.favorite,color: Colors.white,),
                           ),
                         ),
                       ],
@@ -83,13 +93,13 @@ class CustomCard extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 5,horizontal: 10),
                 child: Row(
                   children: [
-                    Text('McDonald’s',
+                    const Text('McDonald’s',
                       textAlign: TextAlign.left,
                       style: TextStyle(
                         color: Colors.black,
@@ -98,13 +108,13 @@ class CustomCard extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(width: 5,),
+                    const SizedBox(width: 5,),
                     Icon(Icons.check_circle_rounded,color: Colors.grey[700],size: 14,)
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -172,11 +182,11 @@ class Customorder extends StatelessWidget {
           style: ElevatedButton.styleFrom(
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(7)),
 
-              backgroundColor: Color(0xFFF6F6F6),
-              minimumSize:Size(30, 25)
+              backgroundColor: const Color(0xFFF6F6F6),
+              minimumSize:const Size(30, 25)
           ),
           child: Text(text,
-            style:TextStyle(
+            style:const TextStyle(
               color: Color(0xFF8A8E9B),
               fontFamily: 'Sofia',
               fontSize: 12,

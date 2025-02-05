@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_hub/Features/Featured%20Favourites/Presentation/Views/Favourites%20Screen.dart';
 
 import '../../../../Core/Styles.dart';
 import '../../../Featured Cart/Presentation/view/Cart Screen.dart';
@@ -221,7 +222,14 @@ class HomeScreen extends StatelessWidget {
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite,color: Colors.grey,),
+            icon: GestureDetector(
+                onTap: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => FavouritesScreen()));
+                },
+
+                child: Icon(Icons.favorite,color: Colors.grey,)),
             label: '',
           ),
           BottomNavigationBarItem(

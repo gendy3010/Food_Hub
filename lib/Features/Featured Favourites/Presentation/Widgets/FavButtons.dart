@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import '../../../../Core/Styles.dart';
 
 
-class Toggle2Buttons extends StatefulWidget {
+class FavButtons extends StatefulWidget {
   @override
-  _Toggle2ButtonsState createState() => _Toggle2ButtonsState();
+  _FavButtonsState createState() => _FavButtonsState();
 }
 
-class _Toggle2ButtonsState extends State<Toggle2Buttons> {
+class _FavButtonsState extends State<FavButtons> {
   bool isUpcoming = true;
 
   @override
@@ -32,13 +32,13 @@ class _Toggle2ButtonsState extends State<Toggle2Buttons> {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
-              buildToggleButton("Upcoming", isUpcoming, () {
+              buildToggleButton("Food Items", isUpcoming, () {
                 setState(() {
                   isUpcoming = true;
                 });
               }),
               buildToggleButton(
-                  "History", !isUpcoming, () {
+                  "Restaurents", !isUpcoming, () {
                 setState(() {
                   isUpcoming = false;
                 });
