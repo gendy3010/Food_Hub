@@ -11,11 +11,10 @@ class FeaturedRestaurantListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.3,
+      height: MediaQuery.of(context).size.height * 0.33,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: ListView.builder(
-          physics: const NeverScrollableScrollPhysics(),
           scrollDirection: Axis.horizontal,
           itemBuilder: (context , index) {
             return Padding(
@@ -23,7 +22,7 @@ class FeaturedRestaurantListView extends StatelessWidget {
               child: CustomCard(),
             );
           },
-          itemCount: 3,
+          itemCount: 5,
         ),
       ),
     );

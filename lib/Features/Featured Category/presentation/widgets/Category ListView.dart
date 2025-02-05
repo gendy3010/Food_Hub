@@ -13,13 +13,13 @@ class FeaturedCaregoryListView extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.5,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 10,),
         child: ListView.builder(
           physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.vertical,
           itemBuilder: (context , index) {
             return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 7),
+              padding: const EdgeInsets.symmetric(horizontal: 7,vertical: 10),
               child: CategoryCard(),
             );
           },

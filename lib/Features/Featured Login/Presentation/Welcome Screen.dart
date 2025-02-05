@@ -60,13 +60,13 @@ class WelcomeScreen extends StatelessWidget {
                     height: 20,
                   ),
                   Text('Your favourite foods delivered',
-                    style: Style.textStyle14.copyWith(color: Colors.grey),
+                    style: Style.textStyle18.copyWith(color: Color(0xFF30384F),fontWeight: FontWeight.normal),
                   ),
                   Text('fast at your door.',
-                    style: Style.textStyle14.copyWith(color: Colors.grey),
+                    style: Style.textStyle18.copyWith(color: Color(0xFF30384F),fontWeight: FontWeight.normal),
                   ),
                   SizedBox(
-                    height: 150,),
+                    height: 220,),
                   Center(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -77,12 +77,7 @@ class WelcomeScreen extends StatelessWidget {
                           color: Colors.white,
                         ),
                         Text('Sign in with',
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Sofia',
-                            color: Colors.white,
-                          ),
+                          style: Style.textStyle14.copyWith(color: Colors.white,fontWeight: FontWeight.normal),
                         ),
                         Container(
                           height: 1,

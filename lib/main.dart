@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'Features/Featured Favourites/Presentation/Views/Favourites Screen.dart';
+import 'package:food_hub/Features/Featured%20Login/Presentation/Welcome%20Screen.dart';
 import 'Features/Featured Login/Presentation/Splash Screen.dart';
-import 'Features/Featured Rating&Reviews/Presentation/views/Review Resturant.dart';
 
 
 
@@ -18,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ReviewResturant(),
+      home: WelcomeScreen(),
     );
   }
 }

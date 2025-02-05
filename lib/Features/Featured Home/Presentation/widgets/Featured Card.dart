@@ -17,7 +17,7 @@ class CustomCard extends StatelessWidget {
             MaterialPageRoute(builder: (context)=> const FoodDetailsScreen()));
       },
       child: SizedBox(
-        height: 229,
+        height: 225,
         width: 320,
         child: Card(
           shape: RoundedRectangleBorder(
@@ -29,8 +29,17 @@ class CustomCard extends StatelessWidget {
             children: [
               Stack(
                 children: [
-                  Image.asset(
-                      'assets/images/image 57.png', height: 100, width: double.infinity, fit: BoxFit.cover),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadiusDirectional.only(
+                        topStart: Radius.circular(20),
+                        topEnd: Radius.circular(20),
+                      ),
+                    ),
+                    clipBehavior: Clip.antiAlias,
+                    child: Image.asset(
+                        'assets/images/image 57.png', height: 140, width: double.infinity, fit: BoxFit.cover),
+                  ),
                   Padding(
                     padding: const EdgeInsets.only(top: 10,left: 10),
                     child: Row(

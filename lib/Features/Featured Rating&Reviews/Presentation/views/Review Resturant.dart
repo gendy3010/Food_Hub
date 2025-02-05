@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:food_hub/Core/Styles.dart';
 
 import '../../../../Core/Widgets/Custom Button.dart';
-import 'Reviews Screen.dart';
+import '../../../Featured Home/Presentation/view/Side Menu.dart';
+
 
 class ReviewResturant extends StatelessWidget {
   const ReviewResturant({super.key});
@@ -32,7 +33,7 @@ class ReviewResturant extends StatelessWidget {
                       child: IconButton(onPressed: (){
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => const ReviewsScreen()));
+                            MaterialPageRoute(builder: (context) =>  SideMenu()));
 
                       },
                           icon: const Icon(Icons.arrow_back_ios_new

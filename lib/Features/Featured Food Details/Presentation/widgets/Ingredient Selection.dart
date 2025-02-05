@@ -8,7 +8,7 @@ class IngredientSelection extends StatefulWidget {
 }
 
 class _IngredientSelectionState extends State<IngredientSelection> {
-  String? _selectedIngredient = 'Pepper Julienne'; // العنصر المختار مبدئيًا
+  String? _selectedIngredient = 'Pepper Julienne';
 
   final List<Map<String, String>> ingredients = [
     {

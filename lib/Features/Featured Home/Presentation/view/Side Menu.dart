@@ -44,6 +44,9 @@ class SideMenu extends StatelessWidget {
 
                 ),
               ),
+              const SizedBox(
+                  height: 5),
+
               const Text(
                 'forionwick@gmail.com',
                 style: TextStyle(
@@ -72,7 +75,7 @@ class SideMenu extends StatelessWidget {
                 MaterialPageRoute(builder: (context)=> const MyOrdersScreen()));
           },
         ),
-        ListTile(
+              ListTile(
           leading: Image.asset('assets/images/prof icon.png'),
           title: GestureDetector(
             onTap: (){
@@ -91,7 +94,7 @@ class SideMenu extends StatelessWidget {
             // Handle Delivery Address
           },
         ),
-        ListTile(
+              ListTile(
           leading: const Icon(Icons.location_on),
           title: GestureDetector(
             onTap: (){
@@ -110,7 +113,23 @@ class SideMenu extends StatelessWidget {
             // Handle Delivery Address
           },
         ),
-        ListTile(
+              ListTile(
+                leading: const Icon(Icons.wallet),
+                title: GestureDetector(
+                  onTap: (){
+                  },
+                  child: Text(
+                    'Payment Methods',
+                    style: TextStyle(
+                        fontFamily: 'Sofia',
+                        fontSize: mediaQuery.size.width * 0.045),
+                  ),
+                ),
+                onTap: () {
+                  // Handle Delivery Address
+                },
+              ),
+              ListTile(
           leading: const Icon(Icons.email),
           title: Text(
             'Contact Us',
@@ -122,7 +141,7 @@ class SideMenu extends StatelessWidget {
             // Handle Payment Methods
           },
         ),
-        ListTile(
+              ListTile(
           leading: const Icon(Icons.settings),
           title: Text(
             'Settings',
@@ -134,7 +153,7 @@ class SideMenu extends StatelessWidget {
             // Handle My Orders
           },
         ),
-        ListTile(
+              ListTile(
           leading: const Icon(Icons.help),
           title: Text(
             'Help & FAQs',
@@ -146,43 +165,47 @@ class SideMenu extends StatelessWidget {
             // Handle Payment Methods
           },
         ),
-              Padding(
-                padding: const EdgeInsets.only(right: 165,top: 100,left: 10),
-                child: ElevatedButton.icon(
-                  onPressed: (){},
-                  icon: const CircleAvatar(
-                    radius:17,
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.power_settings_new,
-                      color: Colors.deepOrange,
-                      size: 20,
-                    ),
-                  ),
-                  label: const Text('Log Out',
-                    style: TextStyle(
-                      fontFamily: 'Sofia',
-                      color: Colors.white,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16,
-                    ),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25)),
-
-                    backgroundColor:Colors.deepOrange ,
-                    foregroundColor:Colors.red ,
-                    side:const BorderSide(color: Colors.deepOrange) ,
-                    minimumSize: const Size(10, 45),
-                  ),
-                ),
-              ),
+              LogOutButton(),
 
             ],
           ),
         ),
       body: const HomeScreen(),
     );
+  }
+
+  Padding LogOutButton() {
+    return Padding(
+              padding: const EdgeInsets.only(right: 165,top: 70,left: 10),
+              child: ElevatedButton.icon(
+                onPressed: (){},
+                icon: const CircleAvatar(
+                  radius:17,
+                  backgroundColor: Colors.white,
+                  child: Icon(
+                    Icons.power_settings_new,
+                    color: Colors.deepOrange,
+                    size: 20,
+                  ),
+                ),
+                label: const Text('Log Out',
+                  style: TextStyle(
+                    fontFamily: 'Sofia',
+                    color: Colors.white,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 16,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25)),
+
+                  backgroundColor:Colors.deepOrange ,
+                  foregroundColor:Colors.red ,
+                  side:const BorderSide(color: Colors.deepOrange) ,
+                  minimumSize: const Size(10, 45),
+                ),
+              ),
+            );
   }
 }

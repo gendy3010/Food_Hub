@@ -34,75 +34,81 @@ class _OrderItemState extends State<OrderItem> {
 
   @override
   Widget build(BuildContext context) {
-    return  Row(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 10),
-          child: Image.asset(
-              'assets/images/cartitem.png',),
-        ),
-        Column(
-          children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+    return  SizedBox(
+      height: 130,
+      child: Row(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(bottom: 20),
+            child: Image.asset(
+                'assets/images/cartitem.png',),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: Column(
               children: [
-                Column(
+                Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
-                      height: 35,
-                      child: Row(
-                        children: [
-                          Text('Red n Hot Pizza',
-                            textAlign: TextAlign.left,
-                            style: Style.textStyle18,
-                          ),
-                          SizedBox(width: 80,),
-                          IconButton(
-                              onPressed: (){},
-                              icon: Icon(Icons.close,color: Colors.orange,size: 22,)),
-
-                        ],
-                      ),
-                    ),
-                    Text('Spicy chicken,beef',
-                      textAlign: TextAlign.left,
-                      style: Style.textStyle14,
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Row(
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(r'$15.30',
-                          textAlign: TextAlign.left,
-                          style: Style.textStyle16,
-                        ),
-                        SizedBox(width: 105,),
-                        buildButton(Icons.remove, _decrement, !_isIncrementing),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                          child: Text(
-                            _counter.toString().padLeft(2, '0'),
-                            style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
+                        SizedBox(
+                          height: 30,
+                          child: Row(
+                            children: [
+                              Text('Red n Hot Pizza',
+                                textAlign: TextAlign.left,
+                                style: Style.textStyle18,
+                              ),
+                              SizedBox(width: 80,),
+                              IconButton(
+                                  onPressed: (){},
+                                  icon: Icon(Icons.close,color: Colors.orange,size: 22,)),
+
+                            ],
                           ),
                         ),
-                        buildButton(Icons.add, _increment, _isIncrementing),
+                        Text('Spicy chicken,beef',
+                          textAlign: TextAlign.left,
+                          style: Style.textStyle14,
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          children: [
+                            Text(r'$15.30',
+                              textAlign: TextAlign.left,
+                              style: Style.textStyle16,
+                            ),
+                            SizedBox(width: 105,),
+                            buildButton(Icons.remove, _decrement, !_isIncrementing),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                              child: Text(
+                                _counter.toString().padLeft(2, '0'),
+                                style: const TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            buildButton(Icons.add, _increment, _isIncrementing),
+                          ],
+                        ),
+
                       ],
                     ),
-
                   ],
                 ),
+
+
               ],
             ),
-
-
-          ],
-        ),
-      ],
+          ),
+        ],
+      ),
     );
   }
 }

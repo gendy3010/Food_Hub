@@ -11,236 +11,209 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
+    return SafeArea(
+      child: Scaffold(
         backgroundColor: Colors.white,
-        elevation: 0,
-        title: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Deliver to',
-                  style: TextStyle(
-                      fontFamily: 'Sofia',
-                      color: Colors.grey,
-                      fontSize: 14),
-                ),
-                IconButton(onPressed: (){},
-                  icon: Icon(Icons.keyboard_arrow_down_outlined,color: Colors.grey,),)
-              ],
-            ),
-            Text(
-              '4102  Pretty View Lane ',
-              style: TextStyle(
-                  fontFamily: 'Sofia',
-                  color: Colors.orange,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 15),
-            ),
-          ],
-        ),
-        leading: GestureDetector(
-          onTap: (){
-            Scaffold.of(context).openDrawer();
-          },
-          child: Center(
-            child: Stack(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 10,left: 5),
-                  child: Material(
-                    elevation: 1,
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(8),
-                    child: SizedBox(
-                      height: 35,
-                      width: 35,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 15),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
                     children: [
-                      Container(
-                        width: 20,
-                        height: 2,
-                        color: Colors.black,
-                      ),
-                      SizedBox(height: 5,),
-                      Container(
-                        width:13,
-                        height: 2,
-                        color: Colors.black,
-                      ),
-
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 20, top: 5, bottom: 5),
-            child: Container(
-              clipBehavior: Clip.antiAliasWithSaveLayer,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(14),
-              ),
-              child: GestureDetector(
-                child: Image.asset('assets/images/profile.png',
-
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(15),
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 15,
-                ),
-                Text('What would you like',
-                  textAlign: TextAlign.left,
-                  style: Style.textStyle30,
-                ),
-                Text('to order',
-                  textAlign: TextAlign.left,
-                  style: Style.textStyle30,
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      width: 260,
-                      height: 45,
-                      child: TextField(
-                        decoration: InputDecoration(
-                          hintText: 'Find for food or restaurant...',
-                          prefixIcon: Icon(Icons.search),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(8.0),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 20),
+                        child: SizedBox(
+                          height: 50,
+                          width: 50,
+                          child: GestureDetector(
+                            onTap: (){
+                              Scaffold.of(context).openDrawer();
+                            },
+                            child: Image.asset(
+                              'assets/images/menu.png',height: 40,width: 40,),
                           ),
                         ),
                       ),
-                    ),
-                    GestureDetector(
-                      onTap: (){
-                        print('filter');
-                      },
-                      child: SizedBox(
-                        height: 70,
-                          width: 70,
-                          child: Image.asset('assets/images/filter.png')),
-                    )
-                  ],
-                ),
-                FeaturedCategoryListView(),
-                SizedBox(
-                    height: 5),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Featured Restaurants',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontFamily: 'Sofia',
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                        ),
+                      SizedBox(
+                        width: 50,
                       ),
-                      Row(
+                      Column(
                         children: [
-                          TextButton(
-                            onPressed: () {
-                              // Handle view all button press
-                            },
-                            child: Text(
-                            'View All',
-                            style: TextStyle(
-                              color: Colors.orange,
-                              fontFamily: 'Sofia',
-                              fontSize: 13,
-                              fontWeight: FontWeight.w600,
+                          SizedBox(
+                            height: 30,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Deliver to',
+                                  style: Style.textStyle14.copyWith(color: Colors.grey),
+                                ),
+                                IconButton(
+                                  onPressed: (){},
+                                  icon: Icon(Icons.keyboard_arrow_down_outlined,color: Colors.grey,size: 15,),)
+                              ],
                             ),
-                          )),
-                          Icon(Icons.arrow_forward_ios,size: 12,color: Colors.orange,)
+                          ),
+                          Text(
+                            '4102  Pretty View Lane ',
+                            style: TextStyle(
+                                fontFamily: 'Sofia',
+                                color: Colors.orange,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 15),
+                          ),
                         ],
+                      ),
+                      Spacer(),
+                      GestureDetector(
+                        child: Image.asset('assets/images/profhome.png',
+
+                        ),
                       ),
                     ],
                   ),
-                ),
-                SizedBox(
-                    height: 5),
-                FeaturedRestaurantListView(),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Text(
+                      'What would you like',
+                      textAlign: TextAlign.left,
+                      style: Style.textStyle30,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Text('to order',
+                      textAlign: TextAlign.left,
+                      style: Style.textStyle30,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  SizedBox(
+                    height: 50,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          width: 260,
+                          height: 36,
+                          child: TextField(
+                            decoration: InputDecoration(
+                              hintText: 'Find for food or restaurant...',
+                              prefixIcon: Icon(Icons.search),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: (){
+                            print('filter');
+                          },
+                          child: Image.asset('assets/images/filter.png',height: 70,width: 70,),
+                        )
+                      ],
+                    ),
+                  ),
+                  FeaturedCategoryListView(),
+                  SizedBox(
+                      height: 10),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Featured Restaurants',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontFamily: 'Sofia',
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            TextButton(
+                              onPressed: () {
+                                // Handle view all button press
+                              },
+                              child: Text(
+                              'View All',
+                              style: TextStyle(
+                                color: Colors.orange,
+                                fontFamily: 'Sofia',
+                                fontSize: 13,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            )),
+                            Icon(Icons.arrow_forward_ios,size: 12,color: Colors.orange,)
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                      height: 5),
+                  FeaturedRestaurantListView(),
 
-              ],
+                ],
+              ),
             ),
           ),
         ),
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          items: [
+            BottomNavigationBarItem(
+                icon: Icon(Icons.explore,color: Colors.grey,),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.location_on,color: Colors.grey,),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: GestureDetector(
+                  onTap: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => CartScreen()));
+                  },
+                  child: Icon(Icons.shopping_bag,color: Colors.grey,)),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: GestureDetector(
+                  onTap: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => FavouritesScreen()));
+                  },
+
+                  child: Icon(Icons.favorite,color: Colors.grey,)),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.notifications,color: Colors.grey,),
+              label: '',
+            ),
+
+
+          ],
+        ),
+
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        items: [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.explore,color: Colors.grey,),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.location_on,color: Colors.grey,),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: GestureDetector(
-                onTap: (){
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => CartScreen()));
-                },
-                child: Icon(Icons.shopping_bag,color: Colors.grey,)),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: GestureDetector(
-                onTap: (){
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => FavouritesScreen()));
-                },
-
-                child: Icon(Icons.favorite,color: Colors.grey,)),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications,color: Colors.grey,),
-            label: '',
-          ),
-
-
-        ],
-      ),
-
     );
   }
 }

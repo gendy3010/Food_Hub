@@ -5,6 +5,7 @@ import 'package:food_hub/Features/Featured%20Home/Presentation/view/Side%20Menu.
 
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
+import '../../../Core/Styles.dart';
 import '../../../Core/Widgets/Custom IconButton.dart';
 import '../../../Core/Widgets/Custom TextFormField.dart';
 import '../../../Core/constants.dart';
@@ -53,18 +54,14 @@ class _LoginScreenState extends State<LoginScreen> {
                             icon: const Icon(Icons.arrow_back_ios_new)),
                       ),
                       const SizedBox(
-                        height: 60,
+                        height: 120,
                       ),
                       const Text('Login',
                         textAlign: TextAlign.left,
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontFamily: 'Sofia',
-                          fontSize: 30,
-                        ),
+                        style:Style.textStyle38,
                       ),
                       const SizedBox(
-                        height: 60,
+                        height: 40,
                       ),
                       const Text('E-mail',
                         textAlign: TextAlign.left,
@@ -82,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         warninText: 'email must not be empty',
                       ),
                       const SizedBox(
-                        height: 10,
+                        height: 30,
                       ),
                       const Text('Password',
                         textAlign: TextAlign.left,
